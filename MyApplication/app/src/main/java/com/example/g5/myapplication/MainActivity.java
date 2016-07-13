@@ -8,20 +8,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i(getClass().getCanonicalName(),"Se ha iniciado la app");
+        //Log.i(getClass().getCanonicalName(),"Se ha iniciado la app");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Persona persona = new Persona("Jorge", 29);
-        Log.i(getClass().getCanonicalName(),"Se ha creado una persona");
+        //Log.i(getClass().getCanonicalName(),"Se ha creado una persona");
 
         String nombre_persona = persona.getName();
 
-        Log.i(getClass().getCanonicalName(),"La persona creada se llama " + nombre_persona);
+        //Log.i(getClass().getCanonicalName(),"La persona creada se llama " + nombre_persona);
 
         int numero_letras = nombre_persona.length();
 
-        Log.i(getClass().getCanonicalName(),nombre_persona + " tiene " + numero_letras + " letras");
+        //Log.i(getClass().getCanonicalName(),nombre_persona + " tiene " + numero_letras + " letras");
 
         Persona alumno = new Alumno(9);
 
@@ -32,30 +32,45 @@ public class MainActivity extends AppCompatActivity {
         if (alumno instanceof Persona)
         {
             //el alumno es una persona
-            Log.d(getClass().getCanonicalName(),"El alumno es persona");
+            //Log.d(getClass().getCanonicalName(),"El alumno es persona");
 
             String nombre_alumno =  alumno.getName();
 
             if (nombre_alumno != null)            {
-                Log.d(getClass().getCanonicalName(),"El nombre del alumno NO es nulo");
+              //  Log.d(getClass().getCanonicalName(),"El nombre del alumno NO es nulo");
             }else{
-                Log.d(getClass().getCanonicalName(),"El nombre del alumno SI es nulo");
+              //  Log.d(getClass().getCanonicalName(),"El nombre del alumno SI es nulo");
             }
 
             try{
-                Log.d(getClass().getCanonicalName(),"Numero de letras del nombre alumno = " + nombre_alumno.length());
+              //  Log.d(getClass().getCanonicalName(),"Numero de letras del nombre alumno = " + nombre_alumno.length());
             }
             catch (Throwable t){
-                Log.d(getClass().getCanonicalName(),"ERROR",t);
+              //  Log.d(getClass().getCanonicalName(),"ERROR",t);
             }
         }
 
 
         EjerciciosRepaso ejerciciosRepaso = new EjerciciosRepaso();
 
-        Log.i(getClass().getCanonicalName(),ejerciciosRepaso.existPalabra("Jorge", "o"));
+            boolean valorDevuelto = ejerciciosRepaso.existPalabra("Jorge", 'o');
 
+            if(valorDevuelto) {
+                //Log.i(getClass().getCanonicalName(), "La letra existe enla palabra");
+            }else{
+                //Log.i(getClass().getCanonicalName(), "La letra NO existe enla palabra");
+            }
 
+            int nveces = ejerciciosRepaso.cuentaLetras("HELLO_WORLD",'L');
+                //Log.i(getClass().getCanonicalName(), "La letra se repite "+nveces+" veces");
+
+            Log.i(getClass().getCanonicalName(),ejerciciosRepaso.esPar(3));
+
+            Log.i(getClass().getCanonicalName(),ejerciciosRepaso.getNota(2));
+
+            Log.i(getClass().getCanonicalName(),ejerciciosRepaso.delReves("ESO EHH!!"));
+
+            Log.i(getClass().getCanonicalName(),ejerciciosRepaso.dameCadena(3));
 
     }
 }
