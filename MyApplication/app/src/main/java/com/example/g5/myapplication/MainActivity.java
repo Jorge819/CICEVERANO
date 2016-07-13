@@ -51,7 +51,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        EjerciciosRepaso ejerciciosRepaso =
+        EjerciciosRepaso ejerciciosRepaso = new EjerciciosRepaso();
+
+        Log.i(getClass().getCanonicalName(),ejerciciosRepaso.existPalabra("Jorge", "o"));
+
+
 
     }
 }

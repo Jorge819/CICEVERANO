@@ -17,7 +17,6 @@ public class EjerciciosRepaso {
         if(palabra.indexOf(letra) != -1){
             valorDevuelto = true;
         }
-
         return valorDevuelto;
     }
 
